@@ -1,0 +1,35 @@
+h1#nameheader {
+	font-size: 24px;
+	background-color: #223344;
+	color: #ffffff;
+	padding-left: 3em;
+}
+
+p.content {
+	font-family: ariel, sans-serif;
+	font-size: 20px;
+	margin-left: 2em;
+}
+
+p#mybio {
+	background-color: yellow;
+	margin-bottom: 3em;
+	margin-left: 0;
+	font-size: 30px;
+}
+
+p#searchme {
+	background-color: blue;
+	color: #ffffff;
+	padding-left: 5px;
+}
+
+p#searchme a {
+	color: #ffffff;
+}
+
+p#kittenlink a {
+	border: 1ps solid #000000;
+	margin: 10px;
+}
+
