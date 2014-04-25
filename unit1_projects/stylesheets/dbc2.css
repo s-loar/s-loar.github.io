@@ -1,0 +1,95 @@
+#container {
+	background: #fff;
+}
+
+#sidebar {
+	float: left;
+	padding: 16px;
+	margin-bottom: 20px;
+	margin-right: 24px;
+	border: 1px solid blue;
+	overflow-y: auto;
+}
+
+#sidebar h1 {
+	font-size: 14px;
+	font-family: verdanna;
+	text-align: center;
+}
+
+#header {
+	padding: 0;
+}
+
+#header h1 {
+	font-size: 36px;
+}
+
+#footer {
+	clear: both;
+	margin-top: 20px;
+	width: 100%;
+	background-color: #BABCC2;
+	padding: 0.1em 10px;
+}
+
+#footer p {
+	margin: 5px;
+}
+
+#cityname {
+	font-weight: bold;
+}
+
+#thingilove {
+	font-style: italic;
+}
+
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0000ff;
+}
+
+a:visited {
+	color: #0000ff;
+}
+
+a:active {
+	color: #0000ff;
+}
+
+a:hover {
+	color: #33C223;
+}
+
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style: none;
+}
+
+#imagecontainer {
+	/*background-image: url("../images/kitten-hat.jpg");
+	background-repeat: no-repeat;*/
+	position: relative;
+	color: #ffffff;
+	margin: auto;
+	padding: 10px;
+}
+
+#imagecontainer img {
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+#imagecontainer p {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 1000;
+}
+
