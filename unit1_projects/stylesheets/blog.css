@@ -1,0 +1,56 @@
+body {
+	background-color: #f6f6ef;
+}
+
+#container {
+	background: #f6f6ef;
+}
+
+#header {
+	padding: 0;
+}
+
+#header h1 {
+	font-size: 36px;
+}
+
+.article {
+	border: 1px solid gray;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 4px 4px 5px #282b1f;
+	-moz-box-shadow: 4px 4px 5px #282b1f;
+	box-shadow: 4px 4px 5px #282b1f;
+	background-color: #fff;
+
+}
+
+.article .articleheader {
+	border-bottom: 1px solid gray;
+	padding-left: 20px;
+}
+
+.article p {
+	padding: 0 20px;
+
+}
+
+
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
+a:active {
+	color: #000;
+}
+
+a:hover {
+	text-decoration: underline;
+}
