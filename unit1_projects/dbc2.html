@@ -6,25 +6,31 @@
 		<title>dbc2 page</title>
 
 		<link rel="stylesheet" href="stylesheets/dbc2.css">
+		<link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+
 	</head>
 	<body>
 		<div id="container">
 
-			<div id="sidebar">
-				<h1>Useful Links</h1>
-				<hr />
-				<ul>
-					<li><a href="https://www.google.com/search?q=steve+Loar" target="_blank">Google Me</a></li>
-					<li><a href="https://twitter.com/SteveLoar" target="_blank">My Twitter</a></li>
-					<li><a href="mailto:info@girldevelopit.com">Girl Develop It</a></li>
-				</ul>
-			</div>
-
-			<div id="header">
+			<header>
 				<h1>Steve Loar</h1>
-			</div>
+				<img src="images/ponies.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
+			</header>
 
-			<div id="content" style="width:800px; margin:0 auto;">
+			<sidebar>
+				<h1>Useful Links</h1>
+				
+				<ul>
+					<li><i class="fa-li fa fa-search"></i><a href="https://www.google.com/search?q=steve+Loar" target="_blank">Google Me</a></li>
+					<li><i class="fa-li fa fa-twitter"></i><a href="https://twitter.com/SteveLoar" target="_blank">My Twitter</a></li>
+					<li><i class="fa-li fa fa-github"></i><a href="https://github.com/s-loar" target="_blank">My GitHub</a></li>
+					<li><i class="fa-li fa fa-envelope-o"></i><a href="mailto:info@girldevelopit.com">Girl Develop It</a></li>
+				</ul>
+			</sidebar>
+
+			
+
+			<section id="content" style="width:800px; margin:0 auto;">
 				<p>
 					I am a guy from <span id="cityname">Cincinnati</span>. I love doing <span id="thingilove">web development</span>. I am hoping to learn Ruby on Rails. 
 				</p>
@@ -34,14 +40,14 @@
 				</p>
 
 				<div id="imagecontainer" style="width:240px; height:200px;">
-					<img src="images/kitten-hat.jpg" />
+					<img src="images/kitten-hat.jpg" alt="Cute Kitten Photo" width="240px" height="210px" />
 					<p>Kittens are cute.</p>
 				</div>
-			</div>
+			</section>
 
-			<div id="footer">
-				<p>All life experiences mentioned above are &copy; 2014.</p>
-			</div>
+			<footer>
+				<p>All life experiences mentioned above are &copy;2014.</p>
+			</footer>
 
 		</div>
 	</body>

@@ -1,39 +1,86 @@
+body {
+	background-color: #777;
+	margin: 0;
+}
+
 #container {
 	background: #fff;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 940px;
 }
 
-#sidebar {
+sidebar {
 	float: left;
 	padding: 16px;
-	margin-bottom: 20px;
-	margin-right: 24px;
-	border: 1px solid blue;
+	margin: 0 24px 20px 15px;
+	border: 1px solid #777;
 	overflow-y: auto;
+	font-family: verdana, sans-serif;
+	width: 180px;
 }
 
-#sidebar h1 {
+sidebar h1 {
 	font-size: 14px;
-	font-family: verdanna;
 	text-align: center;
+	border-bottom: 1px solid #000;
 }
 
-#header {
-	padding: 0;
+sidebar ul {
+	padding-left: 0;
+	margin-top: 10px;
+	margin-left: 30px;
 }
 
-#header h1 {
-	font-size: 36px;
+sidebar li {
+	list-style: none;
+	font-family: verdana, sans-serif;
+	position: relative;
+	margin-bottom: 5px;
 }
 
-#footer {
+
+
+header {
+	position: relative;
+	padding: 6px 0 0 0;
+}
+
+header h1 {
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px 15px;
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+header img {
+	position: relative;
+	border-top: 5px solid #000;
+	border-bottom: 5px solid #000;
+	margin-bottom: 12px;
+}
+
+#headerimgtag {
+	position: absolute;
+	color: #fff;
+	top: 230px;
+	left: 20px;
+	z-index: 1000;
+}
+
+#content {
+	margin: 0 15px;
+}
+
+footer {
 	clear: both;
 	margin-top: 20px;
-	width: 100%;
 	background-color: #BABCC2;
 	padding: 0.1em 10px;
 }
 
-#footer p {
+footer p {
 	margin: 5px;
 }
 
@@ -49,6 +96,7 @@ a:link {
 	font-weight: bold;
 	text-decoration: none;
 	color: #0000ff;
+	font-family: verdana, sans-serif;
 }
 
 a:visited {
@@ -63,17 +111,7 @@ a:hover {
 	color: #33C223;
 }
 
-ul {
-	padding-left: 0;
-}
-
-li {
-	list-style: none;
-}
-
 #imagecontainer {
-	/*background-image: url("../images/kitten-hat.jpg");
-	background-repeat: no-repeat;*/
 	position: relative;
 	color: #ffffff;
 	margin: auto;
@@ -92,4 +130,6 @@ li {
 	left: 20px;
 	z-index: 1000;
 }
+
+
 
