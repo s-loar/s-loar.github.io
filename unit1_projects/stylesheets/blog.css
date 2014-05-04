@@ -2,15 +2,21 @@ body {
 	background-color: #f6f6ef;
 }
 
-#container {
-	background: #f6f6ef;
+#wrapper {
+	background-color: #666;
 }
 
-#header {
+#container {
+	background: #f6f6ef;
+	margin: 0 auto;
+	width: 940px;
+}
+
+header {
 	padding: 0;
 }
 
-#header h1 {
+header h1 {
 	font-size: 36px;
 }
 
@@ -31,11 +37,20 @@ body {
 	padding-left: 20px;
 }
 
+.article .articleheader h1 {
+	padding: 0 20px;
+	font-size: 20px;
+}
+
 .article p {
 	padding: 0 20px;
 
 }
 
+.article  p img {
+	display: block;
+	margin: 0 auto;
+}
 
 a:link {
 	font-weight: bold;
