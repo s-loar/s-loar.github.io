@@ -310,3 +310,58 @@ footer:after {
   font-weight: normal;
   font-style: normal;
 }
+
+/* handle smart phones*/
+@media screen and (max-width: 480px) {
+  body {
+    min-width: 200px;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header nav {
+    clear: both;
+    float: left;
+  }
+
+  header nav ul {
+    height: auto;
+  }
+
+  header nav ul > li { 
+    float: none; 
+    width: 100%; 
+    line-height: 28px;
+  }
+
+  header nav ul a { 
+    line-height: 10px; 
+  }
+
+  #main div.wrapper{
+    width: 100%;
+    max-width:1400px;
+    margin: 0;
+  }
+
+  #famous article.woman {
+    float: none;
+    background-color: white;
+    min-height: 250px;
+    margin: 5px auto;
+    opacity: 0.8;
+    padding: 2%;
+    width: 90%;
+  }
+
+  #famous article img:hover {
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+
+
+}

@@ -61,14 +61,6 @@ header img {
 	margin-bottom: 12px;
 }
 
-#headerimgtag {
-	position: absolute;
-	color: #fff;
-	top: 230px;
-	left: 20px;
-	z-index: 1000;
-}
-
 #content {
 	margin: 0 15px;
 }
