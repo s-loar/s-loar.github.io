@@ -1,15 +1,16 @@
 body {
-	background-color: #f6f6ef;
-}
-
-#wrapper {
-	background-color: #666;
+	background-color: #777;
+	margin: 0;
 }
 
 #container {
-	background: #f6f6ef;
+	/* background: #f6f6ef;*/
+	background: #fff;
+	position: relative;
 	margin: 0 auto;
+	padding: 0;
 	width: 940px;
+	padding-bottom: 30px;
 }
 
 header {
@@ -17,10 +18,26 @@ header {
 }
 
 header h1 {
-	font-size: 36px;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px 15px;
+	padding-top: 15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+}
+
+header img {
+	position: relative;
+	border-top: 5px solid #000;
+	border-bottom: 5px solid #000;
+	margin-bottom: 12px;
+}
+
+section.content {
+	padding: 0 20px;
 }
 
 .article {
+	clear: right;
 	border: 1px solid gray;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
@@ -34,17 +51,20 @@ header h1 {
 
 .article .articleheader {
 	border-bottom: 1px solid gray;
-	padding-left: 20px;
 }
 
 .article .articleheader h1 {
-	padding: 0 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	padding: 10px 20px;
 	font-size: 20px;
+	margin: 0;
 }
 
 .article p {
+	font-family: Georgia,Times,sans-serif;
+	font-size: 17px;
 	padding: 0 20px;
-
+	line-height: 1.5em;
 }
 
 .article  p img {
