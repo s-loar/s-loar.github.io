@@ -48,6 +48,12 @@ section.content li {
 	margin-bottom: 15px;
 }
 
+section.content p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	line-height: 27px;
+}
+
 a:link {
 	font-weight: bold;
 	text-decoration: none;
