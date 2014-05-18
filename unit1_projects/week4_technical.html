@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Steve Loar: Week 4 Technical Blog</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="stylesheets/blog.css">
+	</head>
+	<body>
+		<section id="container">
+
+			<header>
+				<h1>Steve Loar: Week 4 Technical Blog</h1>
+				<img src="http://i.imgur.com/O52gnh2.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
+			</header>
+
+			<section class="content">
+				<article class="article">
+					<header class="articleheader"> 
+						<h1>Exploring Enumerable#map</h1>
+					</header>
+
+					<p>
+						Map is a method of the enumerable class. It is considered one of the most important functional methods in Ruby. It works by iterating over the elements of an array, returning an array which is composed of the results of the block that is executed on each element. If no block is provided an enumerator is returned for each element of the array. From <a href="http://ruby-doc.org/core-2.0/Enumerable.html#method-i-map">Ruby Docs</a> we see the following code example.
+					</p>
+					<p class="codesnippet">
+						map     { |obj| block } → array<br />
+						map                     → an_enumerator
+					</p>
+					<p>
+						This will translate to these examples.
+					</p>
+					<p class="codesnippet">
+						arr = [1,2,3,4]<br />
+						arr.map { |num| num + 2 }  #=> [3, 4, 5, 6]<br />
+						arr.map { "horse"  }   #=> ["horse", "horse", "horse", "horse"]
+					</p>
+					<p>
+						When might you want to use this method. Well if you want to appy a block of code to each element, and return a new array that would then be used elsewhere, that would be a good use. Or you could use the map! method to alter the original array. The code below shows that you could use the map! to capitalize names in an array.
+					</p>
+					<p class="codesnippet">
+						arr2 = ["john", "mary", "anne"]<br/>
+						arr2.map! { |name| name.capitalize }  #=> ["John", "Mary", "Anne"]
+					</p>
+				</article>
+			</section>
+			
+		</section>
+	</body>
+</html>
