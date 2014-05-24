@@ -81,6 +81,13 @@ section.content {
 	background-color: #eee;
 }
 
+pre {
+	font-family: monospace;
+	font-size: 16px;
+	padding-left: 40px;
+	background-color: #eee;
+}
+
 .article ul {
 	margin-left: 30px;
 }
