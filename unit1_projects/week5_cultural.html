@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Steve Loar: Week 5 Cultural Blog</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="stylesheets/blog.css">
+	</head>
+	<body>
+		<section id="container">
+
+			<header>
+				<h1>Steve Loar: Week 5 Cultural Blog</h1>
+				<img src="http://i.imgur.com/O52gnh2.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
+			</header>
+
+			<section class="content">
+				<article class="article">
+					<header class="articleheader"> 
+						<h1>Software Quality</h1>
+					</header>
+
+					<p>
+						There is a debate raging in the software community about software quality. Specifically the lack of it, or more likely, the mis-placement of it. Many of us became aware of quality issues in the recent launch of the government medical insurance site, healthcare.gov. Where the system could not handle the volume of users an possibly did not function even when the demand was down. And if you are a Rails developer, you have probably heard <a href="http://www.confreaks.com/videos/3315-railsconf-keynote-writing-software">David Heinemeier Hansson's talk</a> about unit testing and Test Driven Development (TDD).
+					</p>
+					<p>
+						Today technology is changing quickly and there is a rush to new technologies and innovation before these new approaches have have matured. This leads to a higher cost of development as the developers struggle to learn the new skills to get things to work in the new technology. Often the higher cost leads business, and government, to try and save by cutting costs in other areas. Testing is high on that hit list and is often cut or shortened to a minimum. 
+					</p>
+					<p>
+						Most companies are not so cavalier about quality and testing. In fact, there now seems to be a strict policy of testing first, and getting the software to pass the test is the paramont driver of software development. This approach can be just as bad as no testing when taken to extremes. 
+					</p>
+					<p> 
+						In DHH's talk I mention above, he talks about how he sees that TDD has become more important than the system design and how the system is altered to appease the tests that are run against it. That is my guess as to what happened in the government helthcare web site. Every unit test passed, but no one tested the system or tried to load test it because there wasn't the time, money or recognition of its importance.
+					</p>
+					<p>
+						Software quality is important and TDD is something that we as developers can use to make better software. But successful software systems will be well functioning systems first that also pass the unit tests created for it. So as we create software, keep in mind to always test and not compormise the system you are creating. The ultimate success of your software is that you have lots of people using your system unaware of the quality that has been put into it.
+					</p>
+				</article>
+			</section>
+			
+		</section>
+	</body>
+</html>
