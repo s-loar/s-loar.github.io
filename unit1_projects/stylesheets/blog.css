@@ -29,7 +29,12 @@ header img {
 	position: relative;
 	border-top: 5px solid #000;
 	border-bottom: 5px solid #000;
-	margin-bottom: 12px;
+}
+
+nav {
+	font-family: 'Raleway',sans-serif;
+	padding: 10px 20px;
+	margin-bottom: 5px;
 }
 
 section.content {
@@ -81,7 +86,7 @@ section.content {
 	background-color: #eee;
 }
 
-pre {
+.article pre {
 	font-family: monospace;
 	font-size: 16px;
 	padding: 10px 40px;
@@ -101,6 +106,10 @@ a:link {
 	font-weight: bold;
 	text-decoration: underline;
 	color: #000;
+}
+
+nav a:link {
+	text-decoration: none;
 }
 
 a:visited {
