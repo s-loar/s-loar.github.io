@@ -3,27 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Steve Loar: Week 5 Technical Blog</title>
+		<title>Week 5 Technical Post</title>
 
+		<link rel="stylesheet" href="stylesheets/reset.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="stylesheets/blog.css">
+		<link rel="stylesheet" href="../stylesheets/font-awesome.min.css">
 	</head>
 	<body>
 		<section id="container">
 
 			<header>
-				<h1>Steve Loar: Week 5 Technical Blog</h1>
+				<h1>Steve Loar</h1>
+				<section id="pagetitle">
+					<p id="shortdesc">
+						Web developer, horse rider and maker of small tables.
+					</p>
+					<nav>
+						<ul>
+							<li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+						</ul>
+					</nav>
+				</section>
 				<img src="http://i.imgur.com/O52gnh2.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
 			</header>
 
-			<nav>
-				<a href="../index.html">Home</a>
-			</nav>
-
 			<section class="content">
+				
+				
 				<article class="article">
 					<header class="articleheader"> 
-						<h1>Ruby Classes</h1>
+						<h1>Week 5 Technical Post - Ruby Classes</h1>
+						<section class="postdate">
+							25 May 2014
+						</section>
 					</header>
 
 					<p>
@@ -40,93 +53,15 @@
 						Let me give an example of this to illustrate these principles. Let's say I wanted to model a horse. I would give the horse instance variables for name, color, breed, and mood. When I create a new horse I would pass the specific values of the horse I was modeling.
 					</p>
 					
-<pre>
-# Our horse class
-Class Horse
-  def initialize(name, breed, mood)
-    @name = name
-    @breed = breed
-    @mood = mood
-  end 
-end
-
-# instantiate our horse 
-rico = Horse.new("Rico, "Quater Horse", "sleepy")
-</pre>
-					
-					<p>
-						We now have our horse, rico, but he can't do anything yet. So we need to add some methods. Let do that now. We will give the horse class some public methods that we, as the rider, can
-						access. And we'll create some private methods that only the horse can access.
-					</p>
-<pre>
-# Our horse class
-Class Horse
-  def initialize(name, breed, mood)
-    @name = name
-    @breed = breed
-    @mood = mood
-  end 
-
-  def ask_to( something )
-    walk if something = "walk"
-    trot if something = "trot"
-    canter if something = "canter"
-    stop if something = "whoa"
-  end
-
-  def talk
-    puts "Hi my name is #{@name}. I am a {#mood} {#breed}."
-  end
-
-  def give_treat
-    @mood = "happy"
-  end 
-
-  private
-
-  def walk
-    puts "I'm walking."
-  end
-
-  def trot
-    if @mood == "happy"
-      puts "I'm trotting. Don't we look smart."
-    else
-      walk
-    end 
-  end
-
-  def canter
-    if @mood == "happy"
-      puts "I'm cantering. Hold on!"
-    else
-      trot
-    end 
-  end
-
-  def stop
-    puts "Ok, I'm stopped."
-    @mood = "sleepy"
-  end
-
-end
-
-# instantiate our horse 
-rico = Horse.new("Rico, "Quater Horse", "sleepy")
-# ask rico to walk
-rico.ask_to("walk") #=> gives "I'm walking."
-rico.ask_to("trot") #=> gives "I'm walking." What??
-rico.talk #=> gives "Hi my name is Rico. I am a sleepy Quarter Horse."
-# Let's fix that
-rico.give_treat
-rico.ask_to("trot") #=> gives "I'm trotting. Don't we look smart." That's better!
-</pre>					
-					<p>
-						From this example we can see that our horse, rico will walk for us when we ask. But he will not trot for us and we cannot make him, as that is a private method that he controls. However, if we give him a treat, his mood will change and we can ask him to trot and he will do so. Notice that when we ask him to stop, his mood will change back to sleepy again!
-					</p>
-
 				</article>
 			</section>
+			
+			<footer>
+				<a href="https://github.com/s-loar"><i class="fa fa-github-square"></i></a>
+				<a href="https://twitter.com/SteveLoar"><i class="fa fa-twitter-square"></i></a>
+				<a href="http://www.linkedin.com/in/stevenloar"><i class="fa fa-linkedin-square"></i></a>
+				<a href="https://plus.google.com/+StevenLoar_1"><i class="fa fa-google-plus-square"></i></a>
+			</footer>
 			
 		</section>
 	</body>

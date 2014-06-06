@@ -19,10 +19,11 @@ header {
 
 header h1 {
 	font-size: 30px;
+	font-weight: bold;
 	line-height: 36px;
-	margin: 0 0 18px 15px;
+	margin: 0 0 10px 15px;
 	padding-top: 15px;
-	font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
 header img {
@@ -31,9 +32,15 @@ header img {
 	border-bottom: 5px solid #000;
 }
 
-nav {
+section {
+	display: block;
+	vertical-align: baseline
+}
+
+section#pagetitle nav {
+	float: right;
 	font-family: 'Raleway',sans-serif;
-	padding: 10px 20px;
+	padding-right: 20px;
 	margin-bottom: 5px;
 }
 
@@ -41,8 +48,27 @@ section.content {
 	padding: 0 20px;
 }
 
+section.postdate {
+	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	font-size: 17px;
+	margin-bottom: 20px;
+	padding-left: 40px;
+}
+
+#shortdesc {
+	/*clear: both;*/
+	float: left;
+	text-align: left;
+	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	margin-top: 0;
+	font-size: 18px;
+}
+
 .article {
-	clear: right;
+	/*clear: right;*/
+	margin-top: 20px;
 	border: 1px solid gray;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
@@ -61,7 +87,8 @@ section.content {
 .article .articleheader h1 {
 	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 	font-weight: bold;
-	padding: 10px 20px;
+	padding-top: 10px;
+	padding-left: 20px;
 	font-size: 20px;
 	margin: 0;
 }
@@ -70,7 +97,7 @@ section.content {
 	font-family: 'Raleway',sans-serif;
 	font-size: 18px;
 	line-height: 27px;
-	padding: 0 20px;
+	padding: 10px 20px;
 }
 
 .article  p img {
@@ -112,6 +139,10 @@ nav a:link {
 	text-decoration: none;
 }
 
+nav a:hover {
+	text-decoration: underline;
+}
+
 a:visited {
 	color: #000;
 }
@@ -123,3 +154,83 @@ a:active {
 a:hover {
 	text-decoration: underline;
 }
+
+footer {
+	width: 100%;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding: 0;
+	margin-top: 20px;
+}
+
+footer a:link {
+	font-size: xx-large;
+	line-height: 30px;
+}
+
+
+@media screen and (max-width: 940px) {
+	#container {
+		min-width: 300px;
+		width: 100%;
+	}
+
+	header img {
+		min-width: 300px;
+		width: 100%;
+		height: auto;
+	}
+
+	section.content ul {
+		margin-top: 20px;
+	}
+
+	section.content li {
+		margin-bottom: 25px;
+	}
+
+	a:link {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	
+	header h1 {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-left: 0;
+		margin-left: 0;
+	}
+	
+	#shortdesc {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	section#pagetitle nav {
+		float: none;
+		width: 100%;
+		text-align: center;
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+	
+	.article .articleheader h1 {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-left: 0;
+	}
+	
+	section.postdate {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-left: 0;
+	}
+}
+
