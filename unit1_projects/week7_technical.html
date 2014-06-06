@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 7 Technical Post</title>
+
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="stylesheets/blog.css">
+		<link rel="stylesheet" href="../stylesheets/font-awesome.min.css">
+	</head>
+	<body>
+		<section id="container">
+
+			<header>
+				<h1>Steve Loar</h1>
+				<section id="pagetitle">
+					<p id="shortdesc">
+						Web developer, horse rider and maker of small tables.
+					</p>
+					<nav>
+						<ul>
+							<li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+						</ul>
+					</nav>
+				</section>
+				<img src="http://i.imgur.com/O52gnh2.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
+			</header>
+
+			<section class="content">
+				
+				
+				<article class="article">
+					<header class="articleheader"> 
+						<h1>Week 7 Technical Post - SQL Injection</h1>
+						<section class="postdate">
+							8 June 2014
+						</section>
+					</header>
+
+					<p>
+						SQL Injection is a form of web attack in which the attacking software (bot) attempts to learn about the database of a website, 
+						or to alter the database or data, by passing extra SQL commands as part of data being sent to a web server by a web page.
+						Most commonly, this works by the bot appending SQL commands to a form field that is then sent and 
+						executed against a database as in this example from <a href="http://en.wikipedia.org/wiki/SQL_injection">Wikipedia</a>.
+						An innocent select statement can be altered into something malicious.
+					</p>
+
+					<p class="codesnippet">
+						# our innocent select statement. Probably part of an HTTP GET call.<br />
+						statement = "SELECT * FROM users WHERE name ='" + userName + "';"<br /><br />
+						
+						# the attacking bot puts this into our userName field<br />
+						a';DROP TABLE users; SELECT * FROM userinfo WHERE 't' = 't<br /><br />
+						
+						# This then becomes<br />
+						SELECT * FROM users WHERE name = 'a';DROP TABLE users; SELECT * FROM userinfo WHERE 't' = 't';
+					</p>
+
+					<p>
+						I first learned of SQL Injection attacks several years ago by attending a talk given by 
+						<a href="https://www.owasp.org/index.php/Main_Page">OWASP</a>.
+						They are an organization that seeks to educate about such threats and come up with defenses against them. The talk went through
+						what SQL intrusion was and how to defend against it. Among the things they recommend was scrubbing the data or using parametized 
+						input in stored procedures.
+					</p>
+					<p>
+						When I presented what I learned from OWASP to my management, I was told that they were not interested in this, as it was an unlikely issue 
+						and besides, there was a back up of the database made each night. When the attack came 2 or 3 weeks later, it was discovered that the 
+						back up software could not back up any file that was in use when the backup ran and since the database was always in use, there was no 
+						back up. We were lucky, in that the only damage done was that the data of one column of one table was changed to something like 
+						"Kilroy has hacked this site". We were able to restore that data manually, and we were then given permission to start protecting the 
+						site from further attacks.
+					</p>
+					<p>
+						Initially, we took two approaches to defend against these attacks. First, all numeric HTTP POST form input and HTTP GET parameters 
+						were converted to real number data types before being used in SQL queries or commands. Second, all text data passed in requests, 
+						were scrubbed by replacing all single quotes with two single quotes. These changes eliminated the threat from a bot stringing 
+						multiple commands into one form field. Parametized input was not a good option for us, as the system was constantly changing.
+					</p>
+					<p>
+						As I worked to prevent future attacks, I became interested in what these attacks were, and how often did we get hit with a probe or attack. 
+						I put logging in place where I could catch them, and the defense of converting numbers in requests caused a lot of errors, which where 
+						caught and logged in detail. I was surprised that our site was either being probed for an attack, or attacked, constantly, at 
+						least once a minute around the clock. Sometimes these attacks would increase in intensity to dozens or more per second for 
+						periods of 10 or 15 minutes. I also observed that the bots techniques change over time, altering their attack strategy. 
+						And that they gave more of their attention to pages that generate errors than those that act like nothing happened. 
+						I also saw that they strip out all JavaScript, so nothing could be done with that to impact the attacks.
+					</p>
+					<p>
+						Today, we defend against the bots with some additional defenses. In addition to sanitizing the numbers and text, we also gracefully 
+						handle the data that would have generated an error in the past. We catch that bad input and then send them to a safe page without 
+						generateing any error, or running any SQL scripts. We also put hidden fields on the forms. With JavaScript, we can catch anything a 
+						person might put in a hidden field and ask them to remove it, but since the field is hidden, people do not see it, so no problem. 
+						But the bots do see them and they always fill in every field. So we catch that on the server side of a POST, and redirect them 
+						to another safe page. We are also starting to use more JavaScript and AJAX driven frameworks, like Backbone.js, and since the bots 
+						strip out the JavaScript, those pages probably offer nothing to the bots. I have seen no probes or attacks on these pages, yet.
+					</p>
+					<p>
+						SQL Intrusion is a significant threat that must be defended against. I outlined some defenses you can use above. I strongly 
+						recommend you use them at the start of a project, not after you get hacked. It's worth the extra time it takes to build in 
+						these defenses to prevent the catastrophic hacking of your database. Want more encouragement, on a new site, you can expect 
+						your first attacks to start arriving within 30 minutes of taking it live, so why not prepare for that up front.
+					</p>
+					
+				</article>
+			</section>
+			
+			<footer>
+				<a href="https://github.com/s-loar"><i class="fa fa-github-square"></i></a>
+				<a href="https://twitter.com/SteveLoar"><i class="fa fa-twitter-square"></i></a>
+				<a href="http://www.linkedin.com/in/stevenloar"><i class="fa fa-linkedin-square"></i></a>
+				<a href="https://plus.google.com/+StevenLoar_1"><i class="fa fa-google-plus-square"></i></a>
+			</footer>
+			
+		</section>
+	</body>
+</html>
