@@ -1,10 +1,11 @@
 body {
-	background-color: #777;
+	background-color: #BBB;
 	margin: 0;
 }
 
 #container {
-	background: #91A17D;
+	/*background: #91A17D;*/
+	background: #FAFBFC;
 	position: relative;
 	margin: 0 auto;
 	padding: 0;
@@ -31,7 +32,7 @@ header img {
 	position: relative;
 	border-top: 5px solid #000;
 	border-bottom: 5px solid #000;
-	margin-bottom: 12px;
+	/*margin-bottom: 12px;*/
 }
 
 
@@ -50,6 +51,9 @@ section#pagetitle nav {
 section.content {
 	padding-left: 20px;
 	padding-right: 20px;
+	position: relative;
+	float: left;
+	margin-bottom: 20px;
 }
 
 section.postdate {
@@ -57,6 +61,7 @@ section.postdate {
 	font-size: 17px;
 	margin-bottom: 20px;
 	padding-left: 40px;
+	color: #9DA3B0;
 }
 
 section.content ul {
@@ -75,6 +80,15 @@ section.content p {
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 	line-height: 27px;
+}
+
+section.side_nav {
+	position: relative;
+	float: right;
+	width: 200px;
+	background: #fff;
+	padding: 10px;
+	border: 1px solid #000;
 }
 
 
@@ -98,7 +112,16 @@ a:hover {
 	color: #0000CC;
 }
 
+a.more_link:link {
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	line-height: 15px;
+	font-weight: normal;
+}
+
 footer {
+	clear: both;
+	background: #fff;
 	width: 100%;
 	font-size: xx-large;
 	line-height: 30px;
@@ -110,6 +133,20 @@ footer {
 footer a:link {
 	font-size: xx-large;
 	line-height: 30px;
+	color: #9DA3B0;
+}
+
+footer a:visited {
+	color: #9DA3B0;
+}
+
+footer a:active {
+	color: #9DA3B0;
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: #000;
 }
 
 section.postdate {
@@ -131,7 +168,7 @@ section.postdate {
 .article {
 	/*clear: right;*/
 	margin-top: 20px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
@@ -139,11 +176,15 @@ section.postdate {
 	-moz-box-shadow: 4px 4px 5px #282b1f;
 	box-shadow: 4px 4px 5px #282b1f;
 	background-color: #fff;
+	background-color: #FAFBFC; */
+	border-bottom: 1px solid #CBDBD8;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
 
 }
 
 .article .articleheader {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #CBDBD8;
 }
 
 .article .articleheader h1 {
@@ -151,7 +192,7 @@ section.postdate {
 	font-weight: bold;
 	padding-top: 10px;
 	padding-left: 20px;
-	font-size: 20px;
+	font-size: 30px;
 	margin: 0;
 }
 
@@ -217,6 +258,7 @@ section.postdate {
 		width: 100%;
 		text-align: center;
 		padding-left: 0;
+		font-size: 20px;
 	}
 	
 	section.postdate {

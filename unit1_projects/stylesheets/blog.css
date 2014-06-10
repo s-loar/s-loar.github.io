@@ -1,11 +1,12 @@
 body {
-	background-color: #777;
+	background-color: #BBB;
 	margin: 0;
 }
 
 #container {
 	/* background: #f6f6ef;*/
-	background: #91A17D;
+	/*background: #91A17D;*/
+	background: #FAFBFC;
 	position: relative;
 	margin: 0 auto;
 	padding: 0;
@@ -45,7 +46,24 @@ section#pagetitle nav {
 }
 
 section.content {
+	/*position: relative;
+	float: left;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	width: 74%;
+	min-height: 100px;
+	background-color: #FAFBFC; */
 	padding: 0 20px;
+}
+
+section.side_nav {
+	/*position: relative;
+	float: right;*/
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 26%;
+	min-height: 100px;
+	background-color: #FAFBFC;
 }
 
 section.postdate {
@@ -53,6 +71,7 @@ section.postdate {
 	font-size: 17px;
 	margin-bottom: 20px;
 	padding-left: 40px;
+	color: #9DA3B0;
 }
 
 #shortdesc {
@@ -69,19 +88,21 @@ section.postdate {
 .article {
 	/*clear: right;*/
 	margin-top: 20px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	-webkit-box-shadow: 4px 4px 5px #282b1f;
 	-moz-box-shadow: 4px 4px 5px #282b1f;
-	box-shadow: 4px 4px 5px #282b1f;
-	background-color: #fff;
+	box-shadow: 4px 4px 5px #282b1f;*/
+	background-color: #FAFBFC;
+	border-bottom: 1px solid #CBDBD8;
+	padding-bottom: 20px;
 
 }
 
 .article .articleheader {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #CBDBD8;
 }
 
 .article .articleheader h1 {
@@ -89,7 +110,7 @@ section.postdate {
 	font-weight: bold;
 	padding-top: 10px;
 	padding-left: 20px;
-	font-size: 20px;
+	font-size: 30px;
 	margin: 0;
 }
 
@@ -156,17 +177,33 @@ a:hover {
 }
 
 footer {
+	clear: both;
 	width: 100%;
 	font-size: 20px;
 	line-height: 20px;
 	text-align: center;
 	padding: 0;
 	margin-top: 20px;
+
 }
 
 footer a:link {
 	font-size: xx-large;
 	line-height: 30px;
+	color: #9DA3B0;
+}
+
+footer a:visited {
+	color: #9DA3B0;
+}
+
+footer a:active {
+	color: #9DA3B0;
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: #000;
 }
 
 
@@ -201,6 +238,7 @@ footer a:link {
 		text-align: center;
 		padding-left: 0;
 		margin-left: 0;
+		font-size: 20px;
 	}
 	
 	#shortdesc {
