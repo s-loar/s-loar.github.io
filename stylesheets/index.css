@@ -50,10 +50,11 @@ section#pagetitle nav {
 
 section.content {
 	padding-left: 20px;
-	padding-right: 20px;
+	/*padding-right: 20px;*/
 	position: relative;
 	float: left;
 	margin-bottom: 20px;
+	width: 69%;
 }
 
 section.postdate {
@@ -83,14 +84,30 @@ section.content p {
 }
 
 section.side_nav {
+	margin-top: 40px;
 	position: relative;
 	float: right;
-	width: 200px;
-	background: #fff;
-	padding: 10px;
-	border: 1px solid #000;
+	width: 24%;
+	background: #FAFBFC;
+	padding: 5px;
 }
 
+section.side_nav h1 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+section.side_nav ul {
+	padding-left: 22px;
+}
+
+section.side_nav li {
+	margin-bottom: 15px;
+	list-style: circle;
+}
 
 a:link {
 	font-weight: bold;
@@ -110,6 +127,13 @@ a:active {
 
 a:hover {
 	color: #0000CC;
+}
+
+section.side_nav li a:link {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	line-height: 15px;
+	font-weight: normal;
 }
 
 a.more_link:link {
@@ -204,7 +228,7 @@ section.postdate {
 }
 
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 980px) {
 	#container {
 		min-width: 300px;
 		width: 100%;
@@ -216,12 +240,27 @@ section.postdate {
 		height: auto;
 	}
 
+	section.content {
+		width: 100%;
+		float: none;
+		display: block;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
 	section.content ul {
 		margin-top: 20px;
 	}
 
 	section.content li {
 		margin-bottom: 25px;
+	}
+
+	section.side_nav {
+		float: none;
+		margin: 5px auto;
+		padding: 2%;
+		width: 50%;
 	}
 
 	a:link {
@@ -252,6 +291,10 @@ section.postdate {
 		margin-left: 0;
 		margin-bottom: 10px;
 	}
+
+	.article{
+		margin-left: 0;
+	}
 	
 	.article .articleheader h1 {
 		float: none;
@@ -259,6 +302,11 @@ section.postdate {
 		text-align: center;
 		padding-left: 0;
 		font-size: 20px;
+	}
+
+	.article p {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	
 	section.postdate {
