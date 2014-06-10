@@ -261,6 +261,11 @@ section.postdate {
 		margin: 5px auto;
 		padding: 2%;
 		width: 50%;
+		border: 1px solid silver;
+	}
+
+	section.side_nav ul {
+		width: 100%;
 	}
 
 	a:link {
