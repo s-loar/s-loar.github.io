@@ -121,6 +121,11 @@ section.postdate {
 	padding: 10px 20px;
 }
 
+.article p .subject_title {
+	font-weight: bold;
+	font-size: 19px;
+}
+
 .article  p img {
 	display: block;
 	margin: 0 auto;

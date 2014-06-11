@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Sorting</title>
+
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="stylesheets/blog.css">
+		<link rel="stylesheet" href="../stylesheets/font-awesome.min.css">
+	</head>
+	<body>
+		<section id="container">
+
+			<header>
+				<h1>Steve Loar</h1>
+				<section id="pagetitle">
+					<p id="shortdesc">
+						Web developer, horse rider and maker of small tables.
+					</p>
+					<nav>
+						<ul>
+							<li><a href="../index.html"><i class="fa fa-home"></i> Home</a></li>
+						</ul>
+					</nav>
+				</section>
+				<img src="http://i.imgur.com/O52gnh2.jpg" alt="Ponies at Lost Valley Ranch" height="198" width="940" />
+			</header>
+
+			<section class="content">
+				
+				
+				<article class="article">
+					<header class="articleheader"> 
+						<h1>Sorting (merge sort, quick sort, bubble sort)</h1>
+						<section class="postdate">
+							<i class="fa fa-calendar-o"></i> 
+							15 June 2014
+						</section>
+					</header>
+
+					<p>
+						Often we need to sort data as part of our processing logic, and it is also a common interview question to construct a sort. There various methods to generate a sorted list of items. In this post I will take a look at sorting array data with Ruby. I will look at merge sort, quick sort and the bubble sort.
+					</p>
+					<p>
+						<span class="subject_title">Merge Sort - </span> This sort methods works by dividing the array into the smallest unit (1 element), then compare each element with the adjacent list to sort and merge the two adjacent lists. When the sorting and merging is completed you have the sorted array. A short example of a merge sort can be found here: <a href="https://gist.github.com/kimhunter/1284454">https://gist.github.com/kimhunter/1284454</a> and is presented below.
+					</p>
+					<p class="codesnippet">
+						def merge_sort(array)<br />
+						  &nbsp;&nbsp;return array if array.size <= 1<br />
+						  &nbsp;&nbsp;l, r = split_array(array)<br /><br />
+
+						  &nbsp;&nbsp;# Here we are going to recursively call merge_sort <br />
+						  &nbsp;&nbsp;# until all elements are split out<br />
+						  &nbsp;&nbsp;# Then merge them back in to one sorted array via #combine<br />
+						  &nbsp;&nbsp;result = combine(merge_sort(l), merge_sort(r))<br />
+						end<br /><br />
+
+						def split_array(array)<br />
+						  &nbsp;&nbsp;# find the mid point of the array<br />
+						  &nbsp;&nbsp;mid = (array.size / 2).round<br /><br />
+
+						  &nbsp;&nbsp;# return 2 arrays. One of the first half of the array, <br />
+						  &nbsp;&nbsp;# and one of the second half<br />
+						  &nbsp;&nbsp;[array.take(mid), array.drop(mid)]<br />
+						end<br /><br />
+
+						def combine(a, b)<br />
+						  &nbsp;&nbsp;# return either a if b is empty or b if a is empty<br />
+						  &nbsp;&nbsp;return b.empty? ? a : b if a.empty? || b.empty?<br /><br />
+
+						  &nbsp;&nbsp;# Smallest is either the first element of a or b whichever is smaller<br />
+						  &nbsp;&nbsp;# Then remove that element from the array it came from; either a or b<br />
+						  &nbsp;&nbsp;smallest = a.first <= b.first ? a.shift : b.shift<br /><br />
+
+						  &nbsp;&nbsp;# Make a recursive call to combine with the remaining array elements<br />
+						  &nbsp;&nbsp;# Prepend our smaller value to the front of the resulting array returned<br />
+						  &nbsp;&nbsp;combine(a, b).unshift(smallest)<br />
+						end<br /><br />
+
+						# Driver code<br/>
+						a = [6,23,53,1,2,5,62,61,33,21,14,6,23].shuffle<br />
+						p a  # => [61, 21, 23, 6, 33, 5, 53, 6, 62, 14, 23, 1, 2]<br />
+						p merge_sort(a) # => [1, 2, 5, 6, 6, 14, 21, 23, 23, 33, 53, 61, 62]<br />
+					</p>
+
+					<p>
+						<span class="subject_title">Quick Sort - </span> A quick sort is a sorting method that works by selecting a "pivot" element of the array and then roughly sorts the other elements relative to the pivot. The smaller value elements are placed before the pivot and the higher value elements are placed after the pivot. This process is repeated across the array recursively.
+					</p>
+					<p class="codesnippet">
+						def quick_sort(array)<br />
+						  &nbsp;&nbsp;return array if array.length <= 1<br /><br/>
+
+						  &nbsp;&nbsp;pivot = array.sample # pick a random element for the pivot<br />
+						  &nbsp;&nbsp;array.delete_at(array.index(pivot)) # remove the pivot<br />
+						  &nbsp;&nbsp;#puts "Picked pivot of: #{pivot}"<br />
+						  &nbsp;&nbsp;lesser = []<br />
+						  &nbsp;&nbsp;greater = []<br /><br />
+
+						  &nbsp;&nbsp;# divide the array into lesser than pivot and a greater than pivot arrays<br />
+						  &nbsp;&nbsp;array.each do |x|<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;if x <= pivot<br />
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lesser << x<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;else<br />
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greater << x<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;end<br />
+						  &nbsp;&nbsp;end<br /><br />
+
+						  &nbsp;&nbsp;# build our sorted array<br />
+						  &nbsp;&nbsp;sorted_array = []<br />
+						  &nbsp;&nbsp;# recursively sort the lesser array values<br />
+						  &nbsp;&nbsp;sorted_array << quick_sort(lesser)<br />
+						  &nbsp;&nbsp;sorted_array << pivot # add our pivot value<br />
+						  &nbsp;&nbsp;# reccursively sort our greater array<br />
+						  &nbsp;&nbsp;sorted_array << quick_sort(greater)<br />
+						  &nbsp;&nbsp;# flatten out our resulting array and return this<br />
+						  &nbsp;&nbsp;sorted_array.flatten!<br />
+						end<br /><br />
+
+						# Driver code<br/>
+						a = [6,23,53,1,2,5,62,61,33,21,14,6,23].shuffle<br />
+						p a # => [61, 21, 23, 6, 33, 5, 53, 6, 62, 14, 23, 1, 2]<br />
+						p quick_sort(a) # => [1, 2, 5, 6, 6, 14, 21, 23, 23, 33, 53, 61, 62]<br />
+					</p>
+
+					<p>
+						<span class="subject_title">Bubble Sort - </span> A bubble sort is a simple method that works by repeatedly stepping through the array, comparing each pair of adjacent items and swapping them if they are in the wrong order. The sorting passes through the array are repeated until no further swaps are needed. For a large set of data, it is easy to see that this method could take a long time to process.
+					</p>
+					<p class="codesnippet">
+						def bubble_sort(array)<br />
+						  &nbsp;&nbsp;return array if array.size <= 1<br /><br />
+
+						  &nbsp;&nbsp;swapped = true # this flag indicates we did a swap, and we need to loop again<br /><br />
+
+						  &nbsp;&nbsp;while swapped do<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;# set the flag to false so we can break out of this loop if there was no swap<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;swapped = false <br /><br />
+
+						    &nbsp;&nbsp;&nbsp;&nbsp;# loop trough the array from first element to the next to last element<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;0.upto(array.size-2) do |i|<br />
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# if the value is greater than the next value, swap them<br />
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if array[i] > array[i+1]<br />
+						        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[i], array[i+1] = array[i+1], array[i]<br />
+						        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapped = true # set the flag since we swapped<br />
+						      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br />
+						    &nbsp;&nbsp;&nbsp;&nbsp;end<br />
+						  &nbsp;&nbsp;end<br /><br />
+
+						  &nbsp;&nbsp;# return back the sorted array<br />
+						  &nbsp;&nbsp;array<br />
+						end<br /><br />
+
+						# Driver code<br/>
+						a = [6,23,53,1,2,5,62,61,33,21,14,6,23].shuffle<br />
+						p a # => [61, 21, 23, 6, 33, 5, 53, 6, 62, 14, 23, 1, 2]<br />
+						p bubble_sort(a) # => [1, 2, 5, 6, 6, 14, 21, 23, 23, 33, 53, 61, 62]
+
+					</p>
+					
+					
+				</article>
+			</section>
+			
+			<footer>
+				<a href="https://github.com/s-loar"><i class="fa fa-github-square"></i></a>
+				<a href="https://twitter.com/SteveLoar"><i class="fa fa-twitter-square"></i></a>
+				<a href="http://www.linkedin.com/in/stevenloar"><i class="fa fa-linkedin-square"></i></a>
+				<a href="https://plus.google.com/+StevenLoar_1"><i class="fa fa-google-plus-square"></i></a>
+			</footer>
+			
+		</section>
+	</body>
+</html>
