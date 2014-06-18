@@ -47,43 +47,43 @@
 						<pre>
 // literal notation object
 var james = {
-	job: "programmer",
-	married: false,
-	speak: function( feeling ) {
-		console.log("Hello, I am feeling " + feeling);
+  job: "programmer",
+  married: false,
+  speak: function( feeling ) {
+    console.log("Hello, I am feeling " + feeling);
 };
 
 // property detection in objects with hasOwnProperty
 if ( james.hasOwnProperty("job") ) {
-    console.log(james.job);
+  console.log(james.job);
 }
 else {
-    james.job = "Student";
-    console.log(james.job);
+  james.job = "Student";
+  console.log(james.job);
 }
 
 
 // constructor notation logic
 function Person(first, last, job, married) {
-	this.firstname = first; 
-	this.lastname = last; 
-	var.age = 0; // this is private
-	this.job = job;
-	this.married = married;
+  this.firstname = first; 
+  this.lastname = last; 
+  var.age = 0; // this is private
+  this.job = job;
+  this.married = married;
 
-	this.speak = function() {
-        console.log("Hello");
-    };
+  this.speak = function() {
+    console.log("Hello");
+  };
 
-    // this public method return the age
-    this.getAge = function(){
-    	return age;
-    };
+  // this public method return the age
+  this.getAge = function(){
+    return age;
+  };
 
-    // this is a privat function
-    var toggleMarried(){
-    	this.married = ! this.married;
-    };
+  // this is a privat function
+  var toggleMarried(){
+    this.married = ! this.married;
+  };
 }
 
 // create a "gabby" object using the Person constructor
@@ -94,17 +94,17 @@ var gabby = new Person("student", true);
 // chain of inheritance and going up the chain to find properties
 
 function Animal(name, numLegs) {
-    this.name = name;
-    this.numLegs = numLegs;
-    this.isAlive = true;
+  this.name = name;
+  this.numLegs = numLegs;
+  this.isAlive = true;
 }
 function Penguin(name) {
-    this.name = name;
-    this.numLegs = 2;
+  this.name = name;
+  this.numLegs = 2;
 }
 function Emperor(name) {
-    this.name = name;
-    this.saying = "Waddle waddle";
+  this.name = name;
+  this.saying = "Waddle waddle";
 }
 
 // set up the prototype chain
