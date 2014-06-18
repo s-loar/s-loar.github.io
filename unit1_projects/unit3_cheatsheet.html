@@ -67,7 +67,7 @@ else {
 function Person(first, last, job, married) {
   this.firstname = first; 
   this.lastname = last; 
-  var.age = 0; // this is private
+  var age = 0; // this is private
   this.job = job;
   this.married = married;
 
@@ -80,7 +80,7 @@ function Person(first, last, job, married) {
     return age;
   };
 
-  // this is a privat function
+  // this is a private function
   var toggleMarried(){
     this.married = ! this.married;
   };
@@ -137,13 +137,13 @@ var average = function( array ) {
 // create a gradebook object
 var gradebook = {};
 
-// create a property for each of the students and give each the corresponding scores
+// create a property for each of the students and give each corresponding scores
 for ( var i = 0; i < students.length; i++ ){
   gradebook[students[i]] = {};
   gradebook[students[i]].testScores = scores[i];
 }
 
-// add a function to add scores to a student
+// add a function to add a score to a student
 gradebook.addScore = function(student, score){
     this[student].testScores.push(score);
 };
